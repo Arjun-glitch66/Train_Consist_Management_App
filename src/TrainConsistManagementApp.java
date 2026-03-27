@@ -1,5 +1,5 @@
 import java.util.*;
-class Uc2{
+class TrainConsistManagementApp {
     void task() {
         System.out.println("===============================");
         System.out.println("UC2- ADD PASSENGER BOGGIES TO TRAIN");
@@ -22,10 +22,9 @@ class Uc2{
         System.out.println("Final Train Passenger consist: ");
         System.out.println(passengerbogies);
     }
-}
-class Main{
     public static void main(String[] args){
-        Uc2 ob=new Uc2();
+        TrainConsistManagementApp ob=new TrainConsistManagementApp();
         ob.task();
     }
+
 }
