@@ -10,7 +10,7 @@ public class TrainConsistManagementApp{
         System.out.println("Train successfully initialised");
     }
     public static void main(String[] args){
-        Uc1 ob=new Uc1();
+        TrainConsistManagementApp ob =new TrainConsistManagementApp();
         ob.task();
     }
 }
