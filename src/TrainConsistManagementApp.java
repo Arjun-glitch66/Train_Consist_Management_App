@@ -1,5 +1,5 @@
 import java.util.*;
-class Uc1{
+public class TrainConsistManagementApp{
     void task() {
         System.out.println("===============================");
         System.out.println("Train Consist Management App");
@@ -9,8 +9,6 @@ class Uc1{
         System.out.println("Current Train consist: " +trainconsist);
         System.out.println("Train successfully initialised");
     }
-}
-class Main{
     public static void main(String[] args){
         Uc1 ob=new Uc1();
         ob.task();
