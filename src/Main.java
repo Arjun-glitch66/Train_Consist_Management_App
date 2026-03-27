@@ -1,18 +1,31 @@
 import java.util.*;
-class Uc1{
+class Uc2{
     void task() {
         System.out.println("===============================");
-        System.out.println("Train Consist Management App");
+        System.out.println("UC2- ADD PASSENGER BOGGIES TO TRAIN");
         System.out.println("================================");
-        List<String> trainconsist = new ArrayList<>();
-        System.out.println("Initial count: " +trainconsist.size());
-        System.out.println("Current Train consist: " +trainconsist);
-        System.out.println("Train successfully initialised");
+        List<String> passengerbogies = new ArrayList<>();
+        passengerbogies.add("Sleeper");
+        passengerbogies.add("AC Chair");
+        passengerbogies.add("First class");
+        System.out.println("After Adding Boggies: ");
+        System.out.println("Passenger Boggies: " +passengerbogies);
+        passengerbogies.remove("AC Chair");
+        System.out.println("After Removing AC Chair: ");
+        System.out.println("Passenger Boggies: " +passengerbogies);
+        System.out.println("Checking If 'Sleeper' exists ");
+        boolean istrue=false;
+        if(passengerbogies.contains("Sleeper")){
+            istrue=true;
+            System.out.println("Contains sleeper? " +istrue);
+        }
+        System.out.println("Final Train Passenger consist: ");
+        System.out.println(passengerbogies);
     }
 }
 class Main{
     public static void main(String[] args){
-        Uc1 ob=new Uc1();
+        Uc2 ob=new Uc2();
         ob.task();
     }
 }
