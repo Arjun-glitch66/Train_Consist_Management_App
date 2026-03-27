@@ -2,18 +2,17 @@ import java.util.*; //Hashset willbe in the order of what you input, Set means i
 class TrainConsistManagementApp {
     void task() {
         System.out.println("===============================");
-        System.out.println("UC5- Preserve insertion order of boggies");
+        System.out.println("UC6- Map bogie to capacity (hashmap)");
         System.out.println("================================");
-        Set<String> formation = new LinkedHashSet<>();
-        formation.add("Engine");
-        formation.add("Sleeper");
-        formation.add("Cargo");
-        formation.add("Guard");
-        System.out.println("Final train consist");
-        System.out.println(formation);
-        formation.add("Sleeper");
-        System.out.println("After trying to insert duplicate sleeper: ");
-        System.out.println(formation);
+        Map<String,Integer> capacitymap = new HashMap<>();
+        capacitymap.put("First class",24);
+        capacitymap.put("Sleeper",72);
+        capacitymap.put("Cargo",120);
+        capacitymap.put("AC Chair",56);
+        System.out.println("Bogie capacity details: ");
+        for(Map.Entry<String,Integer> mp:capacitymap.entrySet()){
+            System.out.println(mp.getKey()+"->"+mp.getValue());
+        }
     }
     public static void main(String[] args){
         TrainConsistManagementApp ob=new TrainConsistManagementApp();
