@@ -1,13 +1,31 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
-
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+import java.util.*;
+class Uc2{
+    void task() {
+        System.out.println("===============================");
+        System.out.println("UC2- ADD PASSENGER BOGGIES TO TRAIN");
+        System.out.println("================================");
+        List<String> passengerbogies = new ArrayList<>();
+        passengerbogies.add("Sleeper");
+        passengerbogies.add("AC Chair");
+        passengerbogies.add("First class");
+        System.out.println("After Adding Boggies: ");
+        System.out.println("Passenger Boggies: " +passengerbogies);
+        passengerbogies.remove("AC Chair");
+        System.out.println("After Removing AC Chair: ");
+        System.out.println("Passenger Boggies: " +passengerbogies);
+        System.out.println("Checking If 'Sleeper' exists ");
+        boolean istrue=false;
+        if(passengerbogies.contains("Sleeper")){
+            istrue=true;
+            System.out.println("Contains sleeper? " +istrue);
+        }
+        System.out.println("Final Train Passenger consist: ");
+        System.out.println(passengerbogies);
+    }
+}
+class Main{
+    public static void main(String[] args){
+        Uc2 ob=new Uc2();
+        ob.task();
     }
 }
