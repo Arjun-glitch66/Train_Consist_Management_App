@@ -1,16 +1,22 @@
 import java.util.*;
-public class TrainConsistManagementApp{
+class TrainConsistManagementApp {
     void task() {
         System.out.println("===============================");
-        System.out.println("Train Consist Management App");
+        System.out.println("UC3- Track unique boggie ids");
         System.out.println("================================");
-        List<String> trainconsist = new ArrayList<>();
-        System.out.println("Initial count: " +trainconsist.size());
-        System.out.println("Current Train consist: " +trainconsist);
-        System.out.println("Train successfully initialised");
+        Set<String> bogies = new HashSet<>();
+        bogies.add("BG101");
+        bogies.add("BG102");
+        bogies.add("BG103");
+        bogies.add("BG104");
+        //Testin deuplicate ids
+        bogies.add("BG101");
+
+        System.out.println("Boggie id After insertion: ");
+        System.out.println(bogies);
     }
     public static void main(String[] args){
-        TrainConsistManagementApp ob =new TrainConsistManagementApp();
+        TrainConsistManagementApp ob=new TrainConsistManagementApp();
         ob.task();
     }
 }
