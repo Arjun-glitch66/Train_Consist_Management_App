@@ -1,5 +1,8 @@
 import java.util.*;
+import java.util.stream.Collectors;
+
 class TrainConsistManagementApp {
+    static List<Bogie> bogies;
     static class Bogie{
         String name;
         int capacity;
@@ -8,28 +11,26 @@ class TrainConsistManagementApp {
             this.capacity = capacity;
         }
     }
-    void task() {
-        System.out.println("===============================");
-        System.out.println("UC7- Sort Bogies by Capacity ( Comparator) ");
-        System.out.println("================================");
-        List<Bogie> bogies = new ArrayList<>();
-        bogies.add(new Bogie("Sleeper",72));
-        bogies.add(new Bogie("Ac chair ",56));
-        bogies.add(new Bogie("First class",24));
-        bogies.add(new Bogie("General",90));
-        System.out.println("Before Sorting by Capacity: ");
-        for(Bogie b : bogies){
-            System.out.println(b.name+"->"+b.capacity);
-        }
-        Collections.sort(bogies,Comparator.comparingInt(b->b.capacity)); // (Ascending) -> [b1.capacity -b2.capacity] if +ve b2 first, if -ve b1 first
-        System.out.println();
-        System.out.println("After Sorting by capacity: ");
-        for(Bogie b : bogies){
-            System.out.println(b.name+"->"+b.capacity);
-        }
+    public static List<Bogie> addlist() {
+        bogies = new ArrayList<>();
+        bogies.add(new Bogie("Sleeper", 72));
+        bogies.add(new Bogie("Ac chair ", 56));
+        bogies.add(new Bogie("First class", 24));
+        bogies.add(new Bogie("General", 90));
+        return bogies;
     }
+
     public static void main(String[] args){
-        TrainConsistManagementApp ob=new TrainConsistManagementApp();
-        ob.task();
+        System.out.println("===============================");
+        System.out.println("UC8- Filter passenger Bogies using Streams ");
+        System.out.println("================================");
+        addlist();
+        List<Bogie> newbogies = bogies.stream() //stream used instead of manual looping
+                .filter(b->b.capacity>60)
+                .collect(Collectors.toList()); //collects and stores to the new list "newbogies"
+        System.out.println("Filtered capacity greater than 60");
+        for(Bogie b:newbogies) {
+            System.out.println(b.name + "->" + b.capacity);
+        }
     }
 }
